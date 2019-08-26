@@ -6,6 +6,44 @@ on init
     mount none /system/lib/soundfx/libvolumelistener.so /vendor/lib/soundfx/libvolumelistener.so bind
     mount none /system/lib64/soundfx/libvolumelistener.so /vendor/lib64/soundfx/libvolumelistener.so bind
 
+on early-init
+    mount none /system/lib/modules/audio_adsp_loader.ko /vendor/lib/modules/audio_adsp_loader.ko bind
+    mount none /system/lib/modules/audio_apr.ko /vendor/lib/modules/audio_apr.ko bind
+    mount none /system/lib/modules/audio_cs35l41.ko /vendor/lib/modules/audio_cs35l41.ko bind
+    mount none /system/lib/modules/audio_hdmi.ko /vendor/lib/modules/audio_hdmi.ko bind
+    mount none /system/lib/modules/audio_machine_msmnile.ko /vendor/lib/modules/audio_machine_msmnile.ko bind
+    mount none /system/lib/modules/audio_mbhc.ko /vendor/lib/modules/audio_mbhc.ko bind
+    mount none /system/lib/modules/audio_native.ko /vendor/lib/modules/audio_native.ko bind
+    mount none /system/lib/modules/audio_pinctrl_wcd.ko /vendor/lib/modules/audio_pinctrl_wcd.ko bind
+    mount none /system/lib/modules/audio_platform.ko /vendor/lib/modules/audio_platform.ko bind
+    mount none /system/lib/modules/audio_q6.ko /vendor/lib/modules/audio_q6.ko bind
+    mount none /system/lib/modules/audio_q6_notifier.ko /vendor/lib/modules/audio_q6_notifier.ko bind
+    mount none /system/lib/modules/audio_q6_pdr.ko /vendor/lib/modules/audio_q6_pdr.ko bind
+    mount none /system/lib/modules/audio_stub.ko /vendor/lib/modules/audio_stub.ko bind
+    mount none /system/lib/modules/audio_swr_ctrl.ko /vendor/lib/modules/audio_swr_ctrl.ko bind
+    mount none /system/lib/modules/audio_swr.ko /vendor/lib/modules/audio_swr.ko bind
+    mount none /system/lib/modules/audio_tas2557.ko /vendor/lib/modules/audio_tas2557.ko bind
+    mount none /system/lib/modules/audio_tfa98xx.ko /vendor/lib/modules/audio_tfa98xx.ko bind
+    mount none /system/lib/modules/audio_usf.ko /vendor/lib/modules/audio_usf.ko bind
+    mount none /system/lib/modules/audio_wcd934x.ko /vendor/lib/modules/audio_wcd934x.ko bind
+    mount none /system/lib/modules/audio_wcd9360.ko /vendor/lib/modules/audio_wcd9360.ko bind
+    mount none /system/lib/modules/audio_wcd9xxx.ko /vendor/lib/modules/audio_wcd9xxx.ko bind
+    mount none /system/lib/modules/audio_wcd_core.ko /vendor/lib/modules/audio_wcd_core.ko bind
+    mount none /system/lib/modules/audio_wcd_spi.ko /vendor/lib/modules/audio_wcd_spi.ko bind
+    mount none /system/lib/modules/audio_wglink.ko /vendor/lib/modules/audio_wglink.ko bind
+    mount none /system/lib/modules/audio_wsa881x.ko /vendor/lib/modules/audio_wsa881x.ko bind
+    mount none /system/lib/modules/exfat.ko /vendor/lib/modules/exfat.ko bind
+    mount none /system/lib/modules/modules.alias /vendor/lib/modules/modules.alias bind
+    mount none /system/lib/modules/modules.dep /vendor/lib/modules/modules.dep bind
+    mount none /system/lib/modules/mpq-adapter.ko /vendor/lib/modules/mpq-adapter.ko bind
+    mount none /system/lib/modules/mpq-dmx-hw-plugin.ko /vendor/lib/modules/mpq-dmx-hw-plugin.ko bind
+    mount none /system/lib/modules/qca_cld3_wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
+    mount none /system/lib/modules/rdbg.ko /vendor/lib/modules/rdbg.ko bind
+    mount none /system/lib/modules/rmnet_perf.ko /vendor/lib/modules/rmnet_perf.ko bind
+    mount none /system/lib/modules/rmnet_shs.ko /vendor/lib/modules/rmnet_shs.ko bind
+    mount none /system/lib/modules/tspp.ko /vendor/lib/modules/tspp.ko bind
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_wcd9360 audio_hdmi audio_cs35l41 audio_tas2557 audio_tfa98xx audio_machine_msmnile
+
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
     override
     class late_start
