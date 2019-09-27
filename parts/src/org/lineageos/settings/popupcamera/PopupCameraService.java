@@ -122,16 +122,26 @@ public class PopupCameraService extends Service {
     }
 
     private void lightUp() {
-        FileUtils.writeLine(GREEN_LED_PATH, "255");
-        FileUtils.writeLine(BLUE_LED_PATH, "255");
-
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                FileUtils.writeLine(GREEN_LED_PATH, "0");
-                FileUtils.writeLine(BLUE_LED_PATH, "0");
-            }
-        }, 1200);
+        for (int i = 0; i <= 255; i++) {
+            final int finalI = i;
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    FileUtils.writeLine(GREEN_LED_PATH, Integer.toString(finalI));
+                    FileUtils.writeLine(BLUE_LED_PATH, Integer.toString(finalI));
+                }
+            }, (i * 2));
+        }
+        for (int i = 0; i <= 255; i++) {
+            final int finalI = (i - 255) * (-1);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    FileUtils.writeLine(GREEN_LED_PATH, Integer.toString(finalI));
+                    FileUtils.writeLine(BLUE_LED_PATH, Integer.toString(finalI));
+                }
+            }, (i * 2));
+        }
     }
 
     private SensorEventListener mFreeFallListener = new SensorEventListener() {
