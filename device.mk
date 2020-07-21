@@ -78,6 +78,11 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# GMS
+ifeq ($(WITH_GMS),true)
+    $(call inherit-product, vendor/gms/products/gms.mk)
+endif
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
