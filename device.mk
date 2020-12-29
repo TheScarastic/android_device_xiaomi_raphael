@@ -36,7 +36,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Permissions
 PRODUCT_COPY_FILES += \
-   frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml
+   frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml \
+   frameworks/native/data/etc/android.software.controls.xml:system/etc/permissions/android.software.controls.xml
 
 # Audio
 PRODUCT_PACKAGES += \
