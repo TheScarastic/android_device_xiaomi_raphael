@@ -53,6 +53,12 @@ lib/libfm-hci.so
 product/lib64/vendor.qti.hardware.fm@1.0.so
 product/lib/vendor.qti.hardware.fm@1.0.so
 
+# HotwordEnrollment
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+-system_ext/framework/com.android.hotwordenrollment.common.util.jar
+
 # IMS
 etc/permissions/com.qualcomm.qti.imscmservice.xml
 -product/app/uceShimService/uceShimService.apk
