@@ -67,11 +67,8 @@ PRODUCT_PACKAGES += \
     libvulkan
 
 # Fingerprint
-PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
-
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.raphael
+    android.hardware.biometrics.fingerprint@2.3-service.raphael
 
 # FM
 PRODUCT_PACKAGES += \
