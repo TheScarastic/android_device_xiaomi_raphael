@@ -29,6 +29,8 @@
 
 #define LOG_TAG "QTI PowerHAL"
 
+#include <fcntl.h>
+
 #include <android/log.h>
 #include <linux/input.h>
 #include <utils/Log.h>
