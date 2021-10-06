@@ -18,7 +18,6 @@ package org.lineageos.settings.display;
 
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.view.MenuItem;
 
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
@@ -39,7 +38,6 @@ public class DcDimmingSettingsFragment extends PreferenceFragment implements
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.dcdimming_settings);
-        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         try {
             mDisplayFeature = IDisplayFeature.getService();
         } catch (RemoteException e) {
@@ -56,15 +54,6 @@ public class DcDimmingSettingsFragment extends PreferenceFragment implements
             enableDcDimming((Boolean) newValue ? 1 : 0);
         }
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            getActivity().onBackPressed();
-            return true;
-        }
-        return false;
     }
 
     private void enableDcDimming(int enable) {

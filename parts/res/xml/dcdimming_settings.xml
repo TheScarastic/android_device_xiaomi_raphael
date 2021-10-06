@@ -15,10 +15,17 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/dc_dimming_enable_title">
+
     <SwitchPreference
         android:defaultValue="false"
         android:key="dc_dimming_enable"
-        android:summary="@string/dc_dimming_enable_summary"
         android:title="@string/dc_dimming_enable_title" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="dc_dimming_footer"
+        android:title="@string/dc_dimming_enable_summary"
+        android:selectable="false" />
 </PreferenceScreen>
